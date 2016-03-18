@@ -1,0 +1,27 @@
+.textAreaColumn{
+    width:125%;
+    margin:  0 auto;
+    resize: horizontal;
+}
+.textAreaColumn div{
+    float:left;
+    width:25%;
+    padding:10px;
+    box-sizing: border-box;
+
+}
+
+.textAreaColumn div span{
+    display:block;
+     text-align:  center;
+
+}
+
+.textAreaColumn div textarea{
+    box-sizing: border-box;
+    width:100%;
+    border:1px solid black;
+    min-height:150px;
+    resize: vertical;
+    overflow:  auto;
+}
