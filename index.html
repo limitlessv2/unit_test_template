@@ -5,16 +5,16 @@
 		<meta charset="utf-8">
 
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 		<!-- Style for X, Y, Z -->
-		<link rel="stylesheet" href ="app/css/style.css">
+			<link rel="stylesheet" href ="app/css/style.css">
 		
 	</head>
-<body>
+<body ng-app="">
 
 		<nav class="navbar navbar-default">
 			<span class="header"><h2><p style ="padding: 0px 0px 0px 50px ;">Unit Test Generation Tool</p><h2></span>
@@ -53,7 +53,7 @@
 		                  </ul>
 		                  
 		               </div><!-- /btn-group -->
-		               <input type = "text" class = "form-control">
+		               <input type = "text" class = "form-control" ng-model="proc_name">
 		               
 		            </div><!-- /input-group -->
 		         </div><!-- /.col-lg-6 --><br>
@@ -146,7 +146,9 @@
 
 
 	<!-- F -->
-		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure</p></h3>
+		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : {{proc_name}}</p></h3>
+		
+	<!-- X, Y, Z -->	
 		<div class="textAreaColumn" style="resize:none; padding: 0px 5px 10px 50px;" >
 		    <div>
 		        <span><h4>Pre-Test</h4></span>
@@ -222,11 +224,14 @@
 
 
 	<!-- jquery -->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- angular -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
 
 
 </body>
