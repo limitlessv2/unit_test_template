@@ -12,9 +12,9 @@
 
 		<!-- Style for X, Y, Z -->
 			<link rel="stylesheet" href ="app/css/style.css">
-		
+
 	</head>
-<body ng-app="">
+<body ng-app="myApp">
 
 		<nav class="navbar navbar-default">
 			<span class="header"><h2><p style ="padding: 0px 0px 0px 50px ;">Unit Test Generation Tool</p><h2></span>
@@ -33,25 +33,19 @@
 		                  <button type = "button" class = "btn btn-default" 
 		                     tabindex = "-1">HA Geo Unit Tests</button>
 		                  
+		                  <span ng-controller="DropdownList">
 		                  <button type = "button" class = "btn btn-default dropdown-toggle" 
 		                     data-toggle = "dropdown" tabindex = "-1">
 		                     <span class = "caret"></span>
 		                     <span class = "sr-only">Toggle Dropdown</span>
 		                  </button>
-		                  
+		                 
 		                  <ul class = "dropdown-menu">
-		                     <li><a href = "#">PR_SearchTerm_Put</a></li>
-		                     <li><a href ="#">PR_SearchTerm_Get</a></li>
-		                     <li><a href = "#">PR_SearchTerm_Delete</a></li>
-		                     <li><a href = "#">PR_SearchTermGeography_Put</a></li>
-		                     <li><a href ="#">PR_SearchTermGeography_Get</a></li>
-		                     <li><a href = "#">PR_SearchTermGeography_Delete</a></li>
-		                     <li><a href = "#">PR_SearchTermGeographyMapping_Put</a></li>
-		                     <li><a href ="#">PR_SearchTermGeographyMapping_Get</a></li>
-		                     <li><a href = "#">PR_SearchTermGeographyMapping_Delete</a></li>
-		                     
+		                  	<li ng-repeat="x in ProcedureList">
+		                  		<a href="#">{{x.name}}</span></a>
+		                  	</li>
 		                  </ul>
-		                  
+		                  </span>
 		               </div><!-- /btn-group -->
 		               <input type = "text" class = "form-control" ng-model="proc_name">
 		               
@@ -144,9 +138,9 @@
 	</br>
 
 
-
+	<!--<span ng-bind="proc_name">loading...</span>  , < {{proc_name}}-->
 	<!-- F -->
-		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : {{proc_name}}</p></h3>
+		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : <span ng-bind="proc_name"></span> </p></h3>
 		
 	<!-- X, Y, Z -->	
 		<div class="textAreaColumn" style="resize:none; padding: 0px 5px 10px 50px;" >
@@ -232,6 +226,10 @@
 	<!-- angular -->
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	
+	<!-- js for app -->
+		<script src="app/js/app.js"></script>
+		<script src="app/js/controllers.js"></script>
+		
 
 
 </body>
