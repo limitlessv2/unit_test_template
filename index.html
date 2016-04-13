@@ -42,7 +42,7 @@
 		                 
 		                  <ul class = "dropdown-menu">
 		                  	<li ng-repeat="x in ProcedureList">
-		                  		<a href="#">{{x.name}}</span></a>
+		                  		<a href="#">{{x.name}}</a>
 		                  	</li>
 		                  </ul>
 		                  </span>
@@ -59,6 +59,7 @@
 
 
 	<!-- B -->
+		<span ng-controller="Action">
 		<div class="btn-group" style = "padding: 20px 5px 10px 50px;">
 		  <button type="button" class="btn btn-primary">Action</button>
 		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,17 +67,16 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Put</a></li>
-		    <li><a href="#">Get</a></li>
-		    <li><a href="#">Delete</a></li>
-		    <li><a href="#">Update</a></li>
-		    <li><a href="#">None</a></li>
-
+		    <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
+	</span>
 
 
 	<!-- C -->
+		<span ng-controller="Template">
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-info">Template?</button>
 		  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,14 +84,16 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Yes</a></li>
-		    <li><a href="#">No</a></li>
-
+		    <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
+		</span>
 
 
 	<!-- D -->
+		<span ng-controller="Reset">
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-warning">Reset?</button>
 		  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -99,14 +101,16 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Yes</a></li>
-		    <li><a href="#">No</a></li>
-
+		    <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
+		</span>
 
 
 	<!-- E -->
+		<span ng-controller="Generate">
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-success">Generate</button>
 		  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,12 +118,12 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 			<ul class="dropdown-menu">
-		    <li><a href="#">Test</a></li>
-		    <li><a href="#">Temp Table</a></li>
-
+		    <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
-
+		</span>
 
 
 		<!--
@@ -163,6 +167,7 @@
 
 
 	<!-- G -->
+		<span ng-controller="Save">
 		<div class="btn-group" style = "padding: 20px 5px 10px 50px;">
 		  <button type="button" class="btn btn-primary">Save</button>
 		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -170,11 +175,15 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Export</a></li>
+		    <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
+		</span>
 
 	<!-- H -->
+		<span ng-controller="StartOver">
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-warning">Start Over?</button>
 		  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -182,12 +191,12 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Yes</a></li>
-		    <li><a href="#">No</a></li>
-
+		     <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
-
+		</span>
 		</br>
 		</br>
 
@@ -201,6 +210,7 @@
 
 
 	<!-- I -->
+		<span ng-controller="AddTest">
 		<div class="btn-group" style = "padding: 0px 5px 10px 50px;">
 		  <button type="button" class="btn btn-success">Add Test</button>
 		  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -208,11 +218,12 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Yes</a></li>
-		    <li><a href="#">No</a></li>
+		    <li ng-repeat="a in Options">
+		    	<a href="#">{{a.name}}</a>
+		    </li>
 		  </ul>
 		</div>
-
+		</span>
 		</br>
 		</br>
 
@@ -228,7 +239,14 @@
 	
 	<!-- js for app -->
 		<script src="app/js/app.js"></script>
-		<script src="app/js/controllers.js"></script>
+		<script src="app/scripts/controllers/DropdownList.js"></script>
+		<script src="app/scripts/controllers/Action.js"></script>
+		<script src="app/scripts/controllers/Template.js"></script>
+		<script src="app/scripts/controllers/Reset.js"></script>
+		<script src="app/scripts/controllers/StartOver.js"></script>
+		<script src="app/scripts/controllers/AddTest.js"></script>
+		<script src="app/scripts/controllers/Generate.js"></script>
+		<script src="app/scripts/controllers/Save.js"></script>
 		
 
 
