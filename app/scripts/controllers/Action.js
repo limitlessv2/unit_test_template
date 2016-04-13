@@ -8,4 +8,11 @@ app.controller("Action", function($scope){
 	];
 
 	console.log($scope.Options);
+
+	$scope.selectedItem;
+
+	$scope.dropboxselectedItem = function(item) {
+		$scope.selectedItem = item;
+		console.log($scope.selectedItem);
+	}
 });

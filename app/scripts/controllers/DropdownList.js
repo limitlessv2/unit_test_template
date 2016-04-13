@@ -4,5 +4,13 @@ app.controller("DropdownList", function($scope){
 		{name: 'Unit_Test2'}
 	];
 
+	$scope.selectedItem;
+
 	console.log($scope.ProcedureList);
+
+	$scope.dropboxselectedItem = function(item) {
+		$scope.selectedItem = item;
+		console.log($scope.selectedItem);
+	}
+
 });
