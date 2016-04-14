@@ -1,4 +1,4 @@
-app.controller("Generate", function($scope){
+app.controller("Generate", function($scope, testModel){
 	$scope.Options = [
 		{name: 'Test'},
 		{name: 'Temp table'}
@@ -10,6 +10,8 @@ app.controller("Generate", function($scope){
 
 	$scope.dropboxselectedItem = function(item) {
 		$scope.selectedItem = item;
+		testModel.generate = item;
 		console.log($scope.selectedItem);
+		console.log(testModel.generate);
 	}
 });

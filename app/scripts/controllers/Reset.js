@@ -1,4 +1,4 @@
-app.controller("Reset", function($scope){
+app.controller("Reset", function($scope, testModel){
 	$scope.Options = [
 		{name: 'Yes'},
 		{name: 'No'}
@@ -9,7 +9,16 @@ app.controller("Reset", function($scope){
 	$scope.selectedItem;
 
 	$scope.dropboxselectedItem = function(item) {
+		console.log(item);
+		if (item.name == 'Yes'){
+			console.log('should be overwritten');
+			testModel.proc_name = '';
+			testModel.action = '';
+			testModel.template = '';
+			testModel.generate = '';
+		}
 		$scope.selectedItem = item;
+		
 		console.log($scope.selectedItem);
 	}
 });

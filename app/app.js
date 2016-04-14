@@ -7,4 +7,4 @@ app.factory('testModel' , [ function () {
 		template : '',
 		generate : ''
 	};
-}])
+}]);

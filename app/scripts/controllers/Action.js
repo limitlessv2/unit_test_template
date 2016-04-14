@@ -1,4 +1,4 @@
-app.controller("Action", function($scope){
+app.controller("Action", function($scope,testModel){
 	$scope.Options = [
 		{name: 'Put'},
 		{name: 'Get'},
@@ -13,6 +13,8 @@ app.controller("Action", function($scope){
 
 	$scope.dropboxselectedItem = function(item) {
 		$scope.selectedItem = item;
+		testModel.action = item;
 		console.log($scope.selectedItem);
+		console.log(testModel.action);
 	}
 });
