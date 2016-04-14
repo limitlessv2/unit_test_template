@@ -7,14 +7,14 @@ app.controller("Action", function($scope,testModel){
 		{name: 'None'},
 	];
 
-	console.log($scope.Options);
+	//console.log($scope.Options);
 
 	$scope.selectedItem;
 
 	$scope.dropboxselectedItem = function(item) {
 		$scope.selectedItem = item;
 		testModel.action = item;
-		console.log($scope.selectedItem);
-		console.log(testModel.action);
+		//console.log($scope.selectedItem);
+		//console.log(testModel.action);
 	}
 });

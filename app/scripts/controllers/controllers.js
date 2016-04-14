@@ -4,5 +4,5 @@ app.controller("DropdownList", function($scope){
 		{name: 'Unit_Test2'}
 	];
 
-	console.log($scope.ProcedureList);
+	//console.log($scope.ProcedureList);
 });

@@ -6,13 +6,13 @@ app.controller("DropdownList", function($scope, testModel){
 
 	$scope.selectedItem;
 
-	console.log($scope.ProcedureList);
+	//console.log($scope.ProcedureList);
 
 	$scope.dropboxselectedItem = function(item) {
 		$scope.selectedItem = item;
 		testModel.proc_name = item;
-		console.log($scope.selectedItem);
-		console.log(testModel.proc_name);
+		//console.log($scope.selectedItem);
+		//console.log(testModel.proc_name);
 	}
 
 });

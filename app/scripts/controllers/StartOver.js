@@ -4,7 +4,7 @@ app.controller("StartOver", function($scope, testModel){
 		{name: 'No'}
 	];
 
-	console.log($scope.Options);
+	//console.log($scope.Options);
 	
 	$scope.selectedItem;
 
@@ -18,7 +18,7 @@ app.controller("StartOver", function($scope, testModel){
 		}
 		
 		$scope.selectedItem = item;
-		console.log($scope.selectedItem);
+		//console.log($scope.selectedItem);
 
 	}
 });

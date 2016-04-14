@@ -3,12 +3,12 @@ app.controller("Save", function($scope){
 		{name: 'Export'}
 	];
 
-	console.log($scope.Options);
+	//console.log($scope.Options);
 	
 	$scope.selectedItem;
 
 	$scope.dropboxselectedItem = function(item) {
 		$scope.selectedItem = item;
-		console.log($scope.selectedItem);
+		//console.log($scope.selectedItem);
 	}
 });

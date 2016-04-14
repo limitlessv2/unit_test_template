@@ -4,12 +4,12 @@ app.controller("Reset", function($scope, testModel){
 		{name: 'No'}
 	];
 
-	console.log($scope.Options);
+	//console.log($scope.Options);
 
 	$scope.selectedItem;
 
 	$scope.dropboxselectedItem = function(item) {
-		console.log(item);
+		//console.log(item);
 		if (item.name == 'Yes'){
 			console.log('should be overwritten');
 			testModel.proc_name = '';
@@ -19,6 +19,6 @@ app.controller("Reset", function($scope, testModel){
 		}
 		$scope.selectedItem = item;
 		
-		console.log($scope.selectedItem);
+		//console.log($scope.selectedItem);
 	}
 });
