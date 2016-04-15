@@ -1,6 +1,6 @@
-app.controller("Generate", function($scope, testModel){
+app.controller("Generate", function($scope, $http, testModel){
 	$scope.Options = [
-		{name: 'Test'},
+		{name: 'Tests'},
 		{name: 'Temp table'}
 	];
 
@@ -13,5 +13,19 @@ app.controller("Generate", function($scope, testModel){
 		testModel.generate = item;
 		//console.log($scope.selectedItem);
 		//console.log(testModel.generate);
+		data = JSON.stringify(testModel);
+		console.log(data);
+		$http({
+		method: 'POST',
+		headers: {'Content-Type': 'application/json'},
+		data: data,
+		url : 'http://localhost:8080/generateTest'
+		}).then(function successCallback(response){
+			//console.log(response);
+			console.log('no error');
+		}, function errorCallback(response){
+			//console.log(response);
+			console.log('error');
+		});
 	}
 });
