@@ -2,7 +2,7 @@ var app = angular.module("myApp", []);
 
 app.factory('testModel' , [ function () {
 	return {
-		proc_name : '',
+		proc : '',
 		action : '',
 		template : '',
 		generate : ''

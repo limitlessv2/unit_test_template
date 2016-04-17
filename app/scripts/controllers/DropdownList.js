@@ -10,7 +10,7 @@ app.controller("DropdownList", function($scope, testModel){
 
 	$scope.dropboxselectedItem = function(item) {
 		$scope.selectedItem = item;
-		testModel.proc_name = item;
+		testModel.proc = item;
 		//console.log($scope.selectedItem);
 		//console.log(testModel.proc_name);
 	}
