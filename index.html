@@ -149,8 +149,9 @@
 
 	<!--<span ng-bind="proc_name">loading...</span>  , < {{proc_name}}-->
 	<!-- F -->
-		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : <span ng-bind="proc_name"></span> </p></h3>
-		
+	<span ng-controller="TextBox">
+		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : <span ng-bind="FormC.name"></span> </p></h3>
+	</span>	
 	<!-- X, Y, Z -->	
 		<div class="textAreaColumn" style="resize:none; padding: 0px 5px 10px 50px;" >
 		    <div>
