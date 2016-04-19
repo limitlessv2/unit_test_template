@@ -47,7 +47,12 @@
 		                  </ul>
 		                  </span>
 		               </div><!-- /btn-group -->
-		               <input type = "text" class = "form-control" ng-model="proc_name">		               
+		               <form name="ProcForm">
+			               <span ng-controller="TextBox">
+			               		<input type = "text" name="pForm" class = "form-control" ng-model="FormC.name">	
+			               </span>
+		           		</form>
+
 		            </div><!-- /input-group -->
 		         </div><!-- /.col-lg-6 -->
 		         <button type="button" class="btn btn-default btn-md row">
@@ -247,6 +252,7 @@
 		<script src="app/scripts/controllers/AddTest.js"></script>
 		<script src="app/scripts/controllers/Generate.js"></script>
 		<script src="app/scripts/controllers/Save.js"></script>
+		<script src="app/scripts/controllers/TextBox.js"></script>
 		
 
 

@@ -18,7 +18,6 @@ app.controller("Reset", function($scope, testModel){
 			testModel.generate = '';
 		}
 		$scope.selectedItem = item;
-		
 		//console.log($scope.selectedItem);
 	}
 });
