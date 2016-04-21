@@ -14,7 +14,7 @@
 			<link rel="stylesheet" href ="app/css/style.css">
 
 	</head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="MainController">
 
 		<nav class="navbar navbar-default">
 			<span class="header"><h2><p style ="padding: 0px 0px 0px 50px ;">Unit Test Generation Tool</p><h2></span>
@@ -33,7 +33,7 @@
 		                  <button type = "button" class = "btn btn-default" 
 		                     tabindex = "-1">HA Geo Unit Tests</button>
 		                  
-		                  <span ng-controller="DropdownList">
+		                  <!--span ng-controller="DropdownList" -->
 		                  <button type = "button" class = "btn btn-default dropdown-toggle" 
 		                     data-toggle = "dropdown" tabindex = "-1">
 		                     <span class = "caret"></span>
@@ -41,17 +41,17 @@
 		                  </button>
 		                 
 		                  <ul class = "dropdown-menu">
-		                  	<li ng-repeat="x in ProcedureList">
-		                  		<a href="#" ng-click="dropboxselectedItem(x)">{{x.name}}</a>
+		                  	<li ng-repeat="procedure in ProcedureList">
+		                  		<a href="#" ng-click="procedureSelected(procedure.name)">{{procedure.name}}</a>
 		                  	</li>
 		                  </ul>
-		                  </span>
+		                  <!--/span-->
 		               </div><!-- /btn-group -->
-		               <form name="ProcForm">
-			               <span ng-controller="TextBox">
-			               		<input type = "text" name="pForm" class = "form-control" ng-model="FormC.name">	
-			               </span>
-		           		</form>
+		               <!--form name="ProcForm"-->
+			               <!--span ng-controller="TextBox"-->
+			               		<input type = "text"class = "form-control" ng-model="inputProc">	
+			               <!--/span-->
+		           		<!--/form-->
 
 		            </div><!-- /input-group -->
 		         </div><!-- /.col-lg-6 -->
@@ -64,7 +64,7 @@
  
 
 	<!-- B -->
-		<span ng-controller="Action">
+		<!--span ng-controller="Action"-->
 		<div class="btn-group" style = "padding: 20px 5px 10px 50px;">
 		  <button type="button" class="btn btn-primary">Action</button>
 		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,16 +72,16 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		    <li ng-repeat="a in Actions">
+		    	<a href="#" ng-click="actionSelected(a)">{{a.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-	</span>
+	<!--/span-->
 
 
 	<!-- C -->
-		<span ng-controller="Template">
+		<!--span ng-controller="Template"-->
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-info">Template?</button>
 		  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -89,16 +89,16 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		    <li ng-repeat="a in templateOptions">
+		    	<a href="#" ng-click="templateSelected(a)">{{a.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-		</span>
+		<!--/span-->
 
 
 	<!-- D -->
-		<span ng-controller="Reset">
+		<!--span ng-controller="Reset"-->
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-warning">Reset?</button>
 		  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,16 +106,16 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		    <li ng-repeat="r in resetOptions">
+		    	<a href="#" ng-click="resetSelected(r)">{{r.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-		</span>
+		<!--/span-->
 
 
 	<!-- E -->
-		<span ng-controller="Generate">
+		<!--span ng-controller="Generate"-->
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-success">Generate</button>
 		  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -123,12 +123,12 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 			<ul class="dropdown-menu">
-		    <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		    <li ng-repeat="g in generateOptions">
+		    	<a href="#" ng-click="generateSelected(g)">{{g.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-		</span>
+		<!--/span-->
 
 
 		<!--
@@ -149,9 +149,9 @@
 
 	<!--<span ng-bind="proc_name">loading...</span>  , < {{proc_name}}-->
 	<!-- F -->
-	<span ng-controller="TextBox">
-		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : <span ng-bind="FormC.name"></span> </p></h3>
-	</span>	
+	<!--span ng-controller="TextBox"-->
+		<h3><p style ="padding: 0px 0px 0px 50px ;">Stored Procedure : <span ng-bind="inputProc"></span> </p></h3>
+	<!--/span-->	
 	<!-- X, Y, Z -->	
 		<div class="textAreaColumn" style="resize:none; padding: 0px 5px 10px 50px;" >
 		    <div>
@@ -173,7 +173,7 @@
 
 
 	<!-- G -->
-		<span ng-controller="Save">
+		<!--span ng-controller="Save"-->
 		<div class="btn-group" style = "padding: 20px 5px 10px 50px;">
 		  <button type="button" class="btn btn-primary">Save</button>
 		  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -181,15 +181,15 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		    <li ng-repeat="s in saveOptions">
+		    	<a href="#" ng-click="saveOp(s)">{{s.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-		</span>
+		<!--/span-->
 
 	<!-- H -->
-		<span ng-controller="StartOver">
+		<!--span ng-controller="StartOver"-->
 		<div class="btn-group" style = "padding: 20px 5px 10px;">
 		  <button type="button" class="btn btn-warning">Start Over?</button>
 		  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -197,12 +197,12 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		     <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		     <li ng-repeat="so in soOptions">
+		    	<a href="#" ng-click="soSelected(so)">{{so.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-		</span>
+		<!--/span-->
 		</br>
 		</br>
 
@@ -216,7 +216,7 @@
 
 
 	<!-- I -->
-		<span ng-controller="AddTest">
+		<!--span ng-controller="AddTest"-->
 		<div class="btn-group" style = "padding: 0px 5px 10px 50px;">
 		  <button type="button" class="btn btn-success">Add Test</button>
 		  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -224,12 +224,12 @@
 		    <span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li ng-repeat="a in Options">
-		    	<a href="#" ng-click="dropboxselectedItem(a)">{{a.name}}</a>
+		    <li ng-repeat="at in atOptions">
+		    	<a href="#" ng-click="atSelected(at)">{{at.name}}</a>
 		    </li>
 		  </ul>
 		</div>
-		</span>
+		<!--/span-->
 		</br>
 		</br>
 
@@ -245,15 +245,7 @@
 	
 	<!-- js for app -->
 		<script src="app/app.js"></script>
-		<script src="app/scripts/controllers/DropdownList.js"></script>
-		<script src="app/scripts/controllers/Action.js"></script>
-		<script src="app/scripts/controllers/Template.js"></script>
-		<script src="app/scripts/controllers/Reset.js"></script>
-		<script src="app/scripts/controllers/StartOver.js"></script>
-		<script src="app/scripts/controllers/AddTest.js"></script>
-		<script src="app/scripts/controllers/Generate.js"></script>
-		<script src="app/scripts/controllers/Save.js"></script>
-		<script src="app/scripts/controllers/TextBox.js"></script>
+		<script src="app/scripts/controllers/MainController.js"></script>
 		
 
 
