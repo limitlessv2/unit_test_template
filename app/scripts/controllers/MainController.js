@@ -12,6 +12,11 @@ app.controller("MainController", function($scope, $http, testModel){
 	//Template
 	$scope.template = "";
 
+	//X, Y, Z
+	$scope.x = "";
+	$scope.y = "";
+	$scope.z = "";
+
 	//Dropdown
 	$scope.ProcedureList = [
 		{name: 'Unit_Test1'},
@@ -23,6 +28,39 @@ app.controller("MainController", function($scope, $http, testModel){
 
 	//AddTest
 	$scope.addTest = "";
+
+	// X
+	$scope.$watch(
+		function(scope){
+			return $scope.x;
+		},
+		function handleNameChange(newValue, oldValue){
+			$scope.x = newValue;
+			console.log($scope.x);
+		}
+	);
+	
+	// Y
+	$scope.$watch(
+		function(scope){
+			return $scope.y;
+		},
+		function handleNameChange(newValue, oldValue){
+			$scope.y = newValue;
+			console.log($scope.y);
+		}
+	);
+
+	// Z
+	$scope.$watch(
+		function(scope){
+			return $scope.z;
+		},
+		function handleNameChange(newValue, oldValue){
+			$scope.z = newValue;
+			console.log($scope.z);
+		}
+	);
 
 	$scope.procedureSelected = function(item) {
 		$scope.selectedItem = item;
@@ -112,7 +150,7 @@ app.controller("MainController", function($scope, $http, testModel){
 						'"generate" ' +  ': "' + testModel.generate+ '"'
 					+ " }" ;
 		//var data = angular.toJson(testModel);
-		console.log(data);
+		//console.log(data);
 		$http({
 		method: 'POST',
 		headers: {'Content-Type': 'application/json'},
@@ -120,14 +158,17 @@ app.controller("MainController", function($scope, $http, testModel){
 		url : 'http://localhost:8080/generateTest'
 		}).then(function successCallback(response){
 			console.log("success");
-			console.log(response);
+			//console.log(response);
 			//console.log('tests returned');
-			console.log(response["data"]["pre"]);
-			console.log(response["data"]["test"]);
-			console.log(response["data"]["post"]);
+			//console.log(response["data"]["pre"]);
+			//console.log(response["data"]["test"]);
+			//console.log(response["data"]["post"]);
 			//console.log(response["data"]["list"].test);
 			//console.log(response["data"]["list"].post);
 			//console.log('no error');
+			$scope.x = response["data"]["pre"];
+			$scope.y = response["data"]["test"];
+			$scope.z = response["data"]["post"];
 		}, function errorCallback(response){
 			console.log(response);
 			console.log('error');
@@ -157,6 +198,9 @@ app.controller("MainController", function($scope, $http, testModel){
 			testModel.action = '';
 			testModel.template = '';
 			testModel.generate = '';
+			$scope.x = '';
+			$scope.y = '';
+			$scope.z = '';
 		}
 	}
 
